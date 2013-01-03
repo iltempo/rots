@@ -25,6 +25,8 @@ the success of the response will depend on a parameter given on the url of the a
   s.homepage        = 'http://github.com/roman'
   s.rubyforge_project = 'rots'
 
+  s.add_dependency 'thin'
+
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rack'
   s.add_development_dependency 'ruby-openid'

@@ -87,8 +87,4 @@ server = Rack::Builder.new do
 end
 
 puts "\x1B[32mRunning OpenID Test server on port 1123\x1B[0m" if server_options[:verbose]
-begin 
-  Rack::Handler::Mongrel.run server, :Port => server_options[:port]
-rescue LoadError
-  Rack::Handler::WEBrick.run server, :Port => server_options[:port]
-end
+Rack::Handler::Thin.run server, :Port => server_options[:port]
